@@ -1,0 +1,118 @@
+:root {
+    --color-dark: #161616;
+    --color-ocean: #416dea;
+    --color-grass: #3dd28d;
+    --color-snow: #FFFFFF;
+    --color-salmon: #F32C52;
+    --color-sun: #feee7d;
+    --color-alge: #7999a9;
+    --color-flower: #353866;
+    --color-smoke: #e4e4e4;
+    --font-face: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.button {
+    display: flex;
+    overflow: hidden;
+    padding: 8px 30px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 150ms linear;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none !important;
+    text-transform: none;
+    text-transform: capitalize;
+    border: 0 none;
+    border-radius: 4px;
+    font-weight: 500;
+    line-height: 1.3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 3px 6px var(--color-smoke);
+}
+
+
+
+.button.small {
+    font-size: 0.8em;
+}
+
+.button:hover {
+    transition: all 150ms linear;
+    opacity: .80;
+}
+
+button:hover:disabled {
+    cursor: default;
+}
+.button:active {
+    transition: all 150ms linear;
+    opacity: .7;
+}
+.button:focus {
+    outline: 1px dotted #959595;
+    outline-offset: -4px;
+}
+
+
+
+.button.button-default {
+    color: #202129;
+    background-color: #f2f2f2;
+}
+
+.button.button-default:hover:enabled {
+    color: #202129;
+    background-color: #e1e2e2;
+    opacity: 1;
+}
+.button.button-default:active {
+    background-color: #d5d6d6;
+    opacity: 1;
+}
+
+.button.-dark {
+    color: var(--color-snow);
+    background: var(--color-dark);
+}
+.button.-dark:focus {
+    outline: 1px dotted white;
+    outline-offset: -4px;
+}
+
+.button.button-success {
+    color: var(--color-snow);
+    background: var(--color-grass);
+}
+
+.button.button-primary {
+    color: var(--color-snow);
+    background: var(--color-ocean);
+}
+
+.button.-salmon {
+    color: var(--color-snow);
+    background: var(--color-salmon);
+}
+
+.button.-sun {
+    color: #f15c5c;
+    background: var(--color-sun);
+}
+
+.button.-alge {
+    color: #e7ff20;
+    background: var(--color-alge);
+}
+
+.button.-flower {
+    color: #FE8CDF;
+    background: var(--color-flower);
+}

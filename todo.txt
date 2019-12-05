@@ -1,0 +1,14 @@
+how does setting the torrent on the file after adding to local files, update the peers?
+
+todo:
+
+remove file from torrent client on remove from filelist (filelist removeFile shouldn't be accessing the torrentClient)
+you may need to call URL.revokeObjectURL() when files are removed
+copy/paste invite link from input field doesnt work on mobile
+back button (at least on mobile) should close any embedded windows, possibly routing with tabs too
+pressing esc on desktop should close the preview window
+previewing a file, closing it, then previewing another file, flashes the previous file before showing the desired one
+understand how reconnecting to sockets affects the state of the client app
+connection info user feedback (ie, notify user about connection issues)
+	allow transfers through the server as backup
+cannot open join room while room settings is open on mobile

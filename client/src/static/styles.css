@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    cursor: inherit;
+    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+
+
+html, body, .app, .stage {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    cursor: default;
+    background-color: #f6f9fc;
+    color: #6b7c93;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    background-color: transparent;
+    outline: 0;
+    border: 1px solid lightgray;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    color: black;
+    cursor: initial;
+    border-radius: 3px;
+}
+
+input:focus {
+    border: 1px solid #2c5eaf;
+}
+
+.panel {
+    background-color: #ffffff;
+}
+
+.panel-spacious {
+    padding: 72px;
+}
+
+.panel-floating {
+    box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.2);
+}
+
+.tiny-label {
+    font-size: 0.8em;
+    color: #adadad;
+}
+
+
+
+
+
+
+
+.no-files {
+    text-align: center;
+
+}
+
+.no-files h1 {
+    font-size: 1em;
+}
+
+.local-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.local-user .no-files {
+    margin-top: 25%;
+}
+
+.local-user .no-files h1 {
+    font-size: 1.4em;
+}
+
+.local-user .no-files h2 {
+    font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+.progress-bar {
+    background-color: lightgray;
+    width: 100%;
+    height: 5px;
+    border-radius: 20px;
+}
+
+.progress {
+    background-color: cornflowerblue;
+    height: 5px;
+    border-radius: 20px;
+}
+
+.file-downloaders {
+    margin-left: 20px;
+}
+
+.file-peers {
+    padding: 4px 0 4px 25px;
+}
+
+.file-peer {
+    margin-top: 8px;
+}
+
+.file-peer .details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.peer-progress {
+    font-size: 0.8em;
+}
+
+.pulse {
+    box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+    animation: pulse 2s infinite;
+    z-index: 999;
+}
+.pulse:hover {
+    animation: none;
+}
+
+
+
+
+
+
+input.select-all {
+    cursor: pointer;
+}
+
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(0, 0, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.file-previewer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+.action-list {
+    display: flex;
+}
+
+.action {
+    cursor: pointer;
+    margin: 0 6px;
+}
+
+
+
+/*.file-action svg {
+    width: 24px;
+}*/
+
+.action:hover {
+    color: var(--color-ocean);
+}
+
+.action.action-danger:hover {
+    color: #F32C52;
+}
+
+/*.file .action {
+    text-align: center;
+    color: gray;
+    font-size: 0.8em;
+}*/
+
+
+.file .action > span {
+    display: inline-block;
+    padding: 3px 10px;
+}
+
+/*.file .action-btn:hover {
+    background-color: gray;
+    color: white;
+    opacity: .8;
+    transition: opacity 300ms linear;
+}*/
+
+.popper {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    border: none !important;
+    text-align: left !important;
+
+    background-color: inherit !important;
+    color: inherit !important;
+    box-shadow: none !important;
+}
+
+
+.hide {
+    display: none;
+}
+
+.window {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+
+.window.hide {
+    display: none;
+}
+
+.window-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.window-header {
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    color: #5a5a5a;
+    box-sizing: border-box;
+}
+
+@media(max-width: 768px) {
+
+}
+
