@@ -1,68 +1,66 @@
 const express = require("express");
+const Jwt = require("../Jwt.js");
+const crypto = require("crypto");
+
 const bodyParser = require("body-parser");
-const cors = require('cors');
 
-module.exports = function(serverFactory, rooms) {
+module.exports = function(serverFactory, CLIENT_DIST, rooms, io) {
     let app = express();
-    app.use(cors());
-
     app.use(bodyParser.json());
 
-    app.get("/api/rooms", (req, resp) => {
-        resp.json(rooms.rooms).end();
+    app.get("/", (req, resp) => {
+        resp.redirect("/" + newRoomId());
     });
 
-    app.get("/api/rooms/:id", (req, resp) => {
-        let roomId = req.params.id;
+    app.get("/:id", (req, resp) => {
+        sendStatic(resp, "app.html");
+    });
 
-        if(roomId == null) {
-            resp.status(400).end();
+    app.post("/:id/:method", (req, resp) => {
+        console.log("got request for: " + req.originalUrl);
+
+        let roomId = req.params.id;
+        let methodName = req.params.method;
+        let token = req.header("Authorization");
+
+        let clientId;
+
+        try {
+            clientId = Jwt.verify(token).clientId;
+        } catch(e) {
+            resp.status(401).end();
             return;
         }
 
+        console.log("from clientId " + clientId);
         let room = rooms.getRoom(roomId);
 
         if(room == null) {
-            resp.status(404).end();
-            return
-        }
-
-        resp.json(room).end();
-    });
-
-    app.post("/api/rooms/:id/verifyPassword", (req, resp) => {
-        let room = findRoomFromRequest(req, resp);
-
-        if(room == null) {
+            resp.end("no room found");
             return;
         }
 
-        resp.json({
-            matches: room.isPassword(req.body.password)
-        }).end();
+        let method = room.methods(clientId)[methodName];
+
+        if(method == null) {
+            resp.end("You don't have access to that method");
+            return;
+        }
+
+        method(req.body);
+
+        io.to(roomId).emit("room", room);
+
+        resp.end();
     });
 
-    function findRoomFromRequest(req, resp) {
-        let roomId = req.params.id;
-
-        if(roomId == null) {
-            resp.status(400).end();
-            return null;
-        }
-
-        let room = rooms.getRoom(roomId);
-
-        if(room == null) {
-            resp.status(404).end();
-            return null;
-        }
-
-        return room;
+    function sendStatic(resp, filename) {
+        resp.sendFile(filename, { root : __dirname + "/" + CLIENT_DIST});
     }
 
     return serverFactory.createServer(app);
 };
 
-
-
-
+function newRoomId() {
+    return crypto.randomBytes(32).toString("hex");
+}
