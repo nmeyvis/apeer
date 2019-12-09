@@ -71,14 +71,6 @@ class Rooms {
 }
 
 class Room {
-    /**
-     * options: {
-     *     onEmpty: callback
-     * }
-     * @param name
-     * @param host
-     * @param options
-     */
     constructor(id) {
         this.id = id;
 
@@ -221,6 +213,11 @@ class Room {
         return this.password != null;
     }
 
+    /**
+     * Get the user that joined after the given user. Null if only user or last to join.
+     * @param user
+     * @return {null|*}
+     */
     joinedAfter(user) {
         let indexOf = this.users.indexOf(user);
 
