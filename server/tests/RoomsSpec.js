@@ -77,6 +77,22 @@ describe("Room", function() {
             expect(failCallback).not.toHaveBeenCalled();
             expect(successCallback).toHaveBeenCalled();
         });
+
+        it("should not join if the room is locked", function() {
+            let room = new Room("test");
+            room.lock();
+
+            let user = new User(MockSocket);
+            let failCallback = jasmine.createSpy();
+
+            room.secureAdd({
+                user,
+                password: "password123",
+                fail: failCallback
+            });
+
+            expect(room.isMember(user)).toBe(false);
+        });
     });
 
     describe("#joinedAfter", function() {
