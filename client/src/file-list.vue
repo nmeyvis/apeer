@@ -63,6 +63,7 @@
                 file.saveToDevice();
             },
             changeListType() {
+                // TODO implement
                 console.log('change the list type');
             },
             shouldDisplayAction(actionName) {

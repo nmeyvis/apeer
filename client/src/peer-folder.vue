@@ -22,7 +22,7 @@
             noFilesLabel: Object,
             collectionType: {
                 type: String,
-                default: "offeredFiles" // can be downloads
+                default: "offeredFiles" // can also be downloads
             },
             showHeader: {
                 type: Boolean,
@@ -85,17 +85,8 @@
         box-sizing: border-box;
     }
 
-    .folder > .files {
-        padding: 30px 15px;
-        overflow: auto;
-    }
-
     .folder-header {
 
-    }
-
-    .peer-details {
-        display: flex;
     }
 
     .peer-icon {
@@ -121,14 +112,6 @@
         line-height: 1.5;
     }
 
-    .peer-details.clickable {
-        cursor: pointer;
-    }
-
-    .peer-details.clickable:hover {
-
-    }
-
     @media(max-width: 768px) {
         .folder {
             width: auto;
@@ -138,6 +121,4 @@
             padding: 15px 0;
         }
     }
-
-
 </style>

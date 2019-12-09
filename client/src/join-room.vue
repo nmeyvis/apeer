@@ -1,6 +1,5 @@
 <script>
     const icons = require("feather-icons").icons;
-    const iconsStyle = { width: 24, height: 24, "stroke-width": 1 };
 
     export default {
         name: "join-roon",
@@ -20,7 +19,6 @@
             }
         },
         methods: {
-
             pluralWord(word, quantity) {
                 return word + ((quantity) > 1 ? "s" : "");
             },
@@ -116,19 +114,6 @@
 
         <div class="visible-rooms">
             <room-speed-dial :network="network"></room-speed-dial>
-            <!--<div class="header">Rooms visible to you</div>
-
-            <div class="no-rooms" v-if="network.rooms.length === 0">
-                <p>Rooms that other people make visible to you will show here</p>
-                <button type="button" class="learn-more button button-default">Learn more</button>
-            </div>
-
-            <div v-else class="rooms">
-                <div @click="join(room.id)" v-bind:title="room" class="item" v-for="room in network.rooms">
-                    <div>{{ room.truncateRoomId() }}</div>
-                    <div>{{ room.isLocked }}</div>
-                </div>
-            </div>-->
         </div>
     </div>
 </template>
@@ -151,26 +136,6 @@
         width: 100%;
         margin: 35px 0;
         background-color: lightgrey;
-    }
-
-
-    .visible-rooms .header {
-        font-size: 1.25em;
-        margin-top: 35px;
-        font-weight: normal;
-    }
-
-    .rooms {
-
-    }
-
-    .rooms > .item {
-        padding: 10px 0;
-    }
-
-    .item {
-        display: flex;
-        justify-content: space-between;
     }
 
     .direct-join {
@@ -243,16 +208,6 @@
         color: #6b7c93;
     }
 
-    .no-rooms {
-        padding: 20px;
-        margin-top: 11px;
-        text-align: center;
-        border-radius: 4px;
-        background-color: #f3f3f3;
-        color: #757575;
-
-    }
-
     .no-rooms span {
         font-size: 1.35em;
     }
@@ -261,13 +216,6 @@
         font-size: 0.85em;
         margin-top: 9px;
         padding: 10px 71px;
-    }
-
-    .learn-more.button-default {
-        margin: 0 auto;
-        margin-top: 18px;
-        border: 1px solid #dddddd;
-        padding: 6px 20px;
     }
 
     @media(max-width: 768px) {

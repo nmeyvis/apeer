@@ -2,8 +2,6 @@
     const icons = require("feather-icons").icons;
     const ToggleButton = require("../node_modules/vue-js-toggle-button/src/Button.vue").default;
 
-    const iconsStyle = { width: 24, height: 24, "stroke-width": 1 };
-
     export default {
         data() {
             return {
@@ -131,25 +129,5 @@
         margin-top: 10px;
         font-size: 0.8em;
         color: #8b95a2;
-    }
-
-    .security-overview {
-        margin-top: 15px;
-        padding: 20px;
-        background-color: #f3f3f3;
-        text-align: center;
-        font-size: 0.8em;
-        border-radius: 3px;
-    }
-
-    .security-overview.warn {
-        background-color: #ffd523;
-        color: #2f2f2f;
-    }
-
-    @media(max-width: 768px) {
-        .security-overview {
-            background-color: transparent;
-        }
     }
 </style>

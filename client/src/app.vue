@@ -6,7 +6,6 @@
     const Downloads = require("./types/Downloads.js");
     const Numbers = require("./utils/Numbers.js");
     const WebTorrent = require("webtorrent");
-    const Arrays = require("./utils/Arrays.js");
 
     let torrentClient = new WebTorrent({ dht: false, tracker: { announce: [HOSTS.tracker] } });
 
@@ -81,7 +80,6 @@
         components: {
             "app-header": require("./app-header.vue").default,
             "file-previewer": require("./file-previewer.vue").default,
-            "welcome-wizard": require("./welcome-wizard.vue").default,
             "room-joiner": require("./room-joiner.vue").default,
             "onboarding": require("./onboarding.vue").default
         }
@@ -102,7 +100,6 @@
         <app-header></app-header>
         <room-joiner v-bind:network="localPeer.network"></room-joiner>
         <file-previewer></file-previewer>
-        <!--<welcome-wizard v-if="appState.shouldShowWelcomeWizard()"></welcome-wizard>-->
         <onboarding v-if="appState.shouldShowOnboarding"></onboarding>
     </div>
 </template>

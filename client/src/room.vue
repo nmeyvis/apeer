@@ -102,10 +102,6 @@
 </template>
 
 <style>
-    .local-user .folder {
-        height: 88%;
-    }
-
     .room {
 
         display: flex;
@@ -130,24 +126,6 @@
         display: flex;
         width: 100%;
         height: 100%;
-    }
-
-    .tab {
-        flex: 1;
-        padding: 25px;
-        text-align: center;
-        cursor: pointer;
-        background-color: #f3f3f3;
-        color: #c3c3c3;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tab.selected {
-        background-color: transparent;
-        color: inherit;
     }
 
     .tab.selected .badge {
@@ -193,13 +171,6 @@
         .room-footer {
             padding: 0;
             top: 0;
-        }
-
-        .tab {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding: 25px 15px;
         }
 
         .badge {

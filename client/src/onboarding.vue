@@ -109,7 +109,6 @@
 <style scoped>
 
     .logo {
-
         top: 0;
         left: 0;
         width: 100%;
@@ -188,18 +187,6 @@
 
     .dots {
         display: flex;
-    }
-
-    .dot {
-        width: 8px;
-        height: 8px;
-        margin: 0 5px;
-        border-radius: 30px;
-        background-color: rgba(0, 0, 0, 0.35);
-    }
-
-    .dot.selected {
-        background-color: white;
     }
 
     .call-to-action {

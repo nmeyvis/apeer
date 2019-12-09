@@ -47,7 +47,6 @@
             isMobile: window.isMobile
         },
         components: {
-            "popover": require("./popover.vue").default,
             "popper": popper,
             "room-settings": require("./room-settings.vue").default,
             "confirmation-window": require("./confirmation-window.vue").default

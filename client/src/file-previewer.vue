@@ -57,13 +57,6 @@
         border-radius: 4px;
     }
 
-   #preview-target.not-image {
-       width: 75%;
-       height: 85%;
-       justify-content: center;
-       align-items: center;
-   }
-
     #preview-target > img {
         max-width: 85%;
         max-height: 85%;
@@ -77,7 +70,4 @@
     #preview-target object[type="text/plain"] {
         background-color: white;
     }
-
-
-
 </style>

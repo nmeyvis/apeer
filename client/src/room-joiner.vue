@@ -77,9 +77,6 @@
     function getRoomIdFromPath() {
         let path = window.location.pathname;
         let parts = path.split("/");
-        /*if(parts[1] !== "rooms") {
-            throw "first part of the path is expected to be 'rooms'";
-        }*/
 
         return parts[1];
     }
