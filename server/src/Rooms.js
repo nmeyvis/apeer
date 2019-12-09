@@ -1,4 +1,4 @@
-const Arrays = require("../client/src/utils/Arrays.js");
+const Arrays = require("../../client/src/utils/Arrays.js");
 const EventEmitter = require("events");
 const Networks = require("./Networks.js");
 
