@@ -17,7 +17,7 @@
     "greenlock-express": "^2.4.10",
     "http-proxy": "^1.17.0",
     "jasmine": "^3.5.0",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "socket.io": "^2.1.1",
     "uuid": "^3.3.2"
   },
